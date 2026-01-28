@@ -1,0 +1,32 @@
+/* Define global styles that affect the entire web */
+/* Imported once in main.jsx */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Apply styles to all elements */
+*{
+  padding: 0;              /* Removes default inner spacing */
+  margin: 0;               /* Removes default outer spacing */
+  box-sizing: border-box;  /* Include padding and border in element size */
+  font-family: Outfit;
+}
+
+/* Ensure the body takes at least the full viewport height */
+body{
+  min-height: 100vh;
+}
+
+/* Style all links */
+a{
+  text-decoration: none;  /* Remove underline from links */
+  color: inherit;         /* Inherit text color from parent */
+}
+
+hr{
+  border: none;
+  height: 1px;
+  background-color: #a9a9a9;
+}
+
+.app-content{
+  display: flex;
+}

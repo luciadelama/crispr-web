@@ -1,5 +1,5 @@
 import logo from './logo.png'
 
-export const assests = {
+export const assets = {
     logo
 }
