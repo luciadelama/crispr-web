@@ -9,6 +9,11 @@
     width: 150px;
 }
 
+.navbar .logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -45,7 +50,7 @@
     gap: 40px;
 }
 
-.navbar button {
+.track-btn {
     background: transparent;
     font-size: 16px;
     color: #005f8f;
@@ -56,7 +61,68 @@
     transition: 0.3s;       /* Make background color change smoothly */
 }
 
-.navbar button:hover {
+.track-btn:hover {
     background-color: #005f8f;
     color: white
+}
+
+/* Dropdown track */
+.track-dropdown {
+  position: relative;
+}
+
+.track-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 320px;
+
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+
+  background: #f8fafc; /* slate-50 */
+  border: 1px solid #cbd5e1; /* slate-300 */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+  padding: 12px;
+  z-index: 50;
+}
+
+.track-label {
+  display: block;
+  font-size: 12px;
+  color: #475569; /* slate-600 */
+  margin-bottom: 8px;
+}
+
+.track-panel-input {
+  width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  outline: none;
+}
+
+.track-panel-input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+}
+
+.track-panel-submit {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #005f8f;
+  background: #005f8f;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.track-panel-submit:hover {
+  filter: brightness(1.05);
 }

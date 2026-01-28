@@ -4,7 +4,7 @@ import crypto from "crypto"
 // placing order for frontend
 const placeOrder = async (req,res) =>{
     try {
-        const { assay, gene, variant, personal } = req.body;
+        const { assay, gene, variant, personal } = req.body || {};
 
         if (!assay || !gene || !variant || !personal) {
             return res.status(400).json({ success: false, message: "Missing fields" });
@@ -17,9 +17,10 @@ const placeOrder = async (req,res) =>{
             assay,
             gene,
             variant,
+            status: "Order received",
             customer: {
-                firstName: personal.firstName,
-                lastName: personal.lastName,
+                fullName: personal.fullName,
+                institution: personal.institution,
                 email: personal.email,
                 phone: personal.phone,
                 city: personal.city,
@@ -27,26 +28,111 @@ const placeOrder = async (req,res) =>{
             },
         });
 
+        await newOrder.save();
+
         return res.status(201).json({
             success: true,
             trackingId: newOrder.trackingId,
         });
     } catch (error) {
         console.error("placeOrder error:", error);
-        
         return res.status(500).json({ success: false, message: error.message });
     }
 };
 
-// Listing orders for admin panel
+const escapeRegex = (s = "") => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+// api for listing orders for admin panel
 const listOrders = async (req, res) => {
     try {
-        const orders = await orderModel.find({}).sort({ createdAt: -1 });
-        return res.status(200).json({ success: true, data: orders });
+        const page = Math.max(parseInt(req.query.page || "1", 10), 1);
+        const limit = Math.min(Math.max(parseInt(req.query.limit || "10", 10), 1), 100);
+        const skip = (page - 1) * limit;
+
+        const { gene, status, q } = req.query;
+
+        // Build query
+        const filter = {};
+
+        if (gene && gene !== "all") filter.gene = gene;
+        if (status && status !== "all") filter.status = status;
+
+        if (q && q.trim()) {
+            const safe = escapeRegex(q.trim());
+            filter.$or = [
+                { trackingId: { $regex: safe, $options: "i" } },
+                { assay: { $regex: safe, $options: "i" } },
+                { gene: { $regex: safe, $options: "i" } },
+                { variant: { $regex: safe, $options: "i" } },
+                { "customer.fullName": { $regex: safe, $options: "i" } },
+                { "customer.institution": { $regex: safe, $options: "i" } },
+                { "customer.email": { $regex: safe, $options: "i" } },
+                { "customer.phone": { $regex: safe, $options: "i" } },
+            ];
+        }
+
+        const [orders, total] = await Promise.all([
+            orderModel.find(filter)
+                .sort({ createdAt: -1 }) 
+                .skip(skip)
+                .limit(limit),
+            orderModel.countDocuments(filter)
+        ]);
+
+        res.json({
+            success: true,
+            data: orders,
+            pagination: {
+                page,
+                limit,
+                total,
+                totalPages: Math.ceil(total / limit),
+            },
+        });
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ success: false, message: "Error" });
+        res.json({ success: false, message: "Error" });
     }
 };
 
-export{placeOrder, listOrders};
+// api for getting unique genes (for filters)
+const getGenes = async (req, res) => {
+    try {
+        const genes = await orderModel.distinct("gene");
+        res.json({ success: true, data: genes.sort() });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
+// api for updating order status
+const updateStatus = async (req, res) => {
+    try {
+        await orderModel.findByIdAndUpdate(req.body.orderId,{status:req.body.status});
+        res.json({success:true,message:"Status Updated"})
+    } catch (error) {
+        console.log(error);
+        res.json({success:false,message:"Error"})
+    }
+}
+
+// api for tracking order status
+const trackOrder = async (req, res) => {
+  try {
+    const { trackingId } = req.params;
+
+    const order = await orderModel.findOne(
+      { trackingId },
+      { trackingId: 1, status: 1, createdAt: 1 } // devuelve lo mínimo
+    );
+
+    if (!order) return res.status(404).json({ success:false, message:"Not found" });
+
+    return res.json({ success:true, data: order });
+  } catch (e) {
+    return res.status(500).json({ success:false, message:"Error" });
+  }
+};
+
+export{placeOrder, listOrders, updateStatus, trackOrder, getGenes};

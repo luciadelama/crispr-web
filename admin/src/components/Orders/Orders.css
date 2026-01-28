@@ -1,0 +1,113 @@
+.order.add {
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.order.add h2 {
+  margin: 0 0 16px;
+  color: #0f172a; 
+}
+
+/* wrappers */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background: #f8fafc; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 12px;
+}
+
+/* table */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+
+.orders-table thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #0f172a;
+  background: #e6f0ff; 
+  border-bottom: 1px solid #cbd5e1;
+  padding: 12px 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.orders-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b; 
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+.orders-table tbody tr:hover {
+  background: #f1f5f9; 
+}
+
+.order-completed {
+  background-color: #e6f7ee;
+}
+
+.trackid {
+  color: #007dbb !important;
+  font-family: monospace;
+}
+
+.contact-email {
+  color: #0f172a; 
+  font-size: 15px;
+  word-break: break-all;
+}
+
+.contact-phone {
+  color: #64748b; 
+  font-size: 14px;
+}
+
+/* select */
+.status-select {
+  width: 100%;
+  max-width: 190px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  outline: none;
+  font-size: 15px;
+}
+
+.status-select:focus {
+  border-color: #60a5fa; /* blue-400 */
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+}
+
+/* error */
+.error {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.pagination{
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.pagination button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}

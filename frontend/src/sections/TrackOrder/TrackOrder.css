@@ -1,0 +1,183 @@
+.track-page {
+  padding: 28px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.track-card {
+  width: 100%;
+  max-width: 920px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 16px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08);
+}
+
+.track-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.track-title {
+  margin: 0;
+  font-size: 22px;
+  color: #111827; /* gray-900 */
+}
+
+.track-sub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280; /* gray-500 */
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 0.3px;
+}
+
+.dot {
+  margin: 0 8px;
+}
+
+.status-badge {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db; /* gray-300 */
+  background: #f9fafb; /* gray-50 */
+  color: #374151; /* gray-700 */
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.track-muted {
+  color: #6b7280;
+  margin: 0;
+}
+
+.track-error {
+  color: #991b1b;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin: 12px 0 10px;
+}
+
+/* Stepper layout */
+.stepper {
+  position: relative;
+  padding: 18px 6px 6px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.stepper-line {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  top: 34px;
+  height: 4px;
+  background: #e5e7eb; /* gray-200 */
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.stepper-line-fill {
+  height: 100%;
+  background: #9ca3af; /* gray-400 */
+  width: 0%;
+  border-radius: 999px;
+  transition: width 300ms ease;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.node {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  border: 2px solid #d1d5db; /* gray-300 */
+  background: #ffffff;
+  color: #6b7280; /* gray-500 */
+  z-index: 2;
+}
+
+.step-label {
+  font-size: 12.5px;
+  color: #6b7280; /* gray-500 */
+  line-height: 1.25;
+  max-width: 140px;
+}
+
+/* States */
+.step.done .node {
+  background: #f3f4f6; /* gray-100 */
+  border-color: #9ca3af; /* gray-400 */
+  color: #374151; /* gray-700 */
+}
+
+.step.active .node {
+  background: #111827; /* gray-900 */
+  border-color: #111827;
+  color: #ffffff;
+}
+
+.step.active .step-label {
+  color: #111827;
+  font-weight: 600;
+}
+
+.track-foot {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .stepper-line,
+  .stepper-line-fill {
+    display: none;
+  }
+
+  .step {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 12px;
+    padding: 8px 6px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fafafa;
+  }
+
+  .step-label {
+    max-width: none;
+  }
+}

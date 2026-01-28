@@ -26,3 +26,4 @@ app.listen(port,()=>{
     console.log(`Server Started in http://localhost:${port}`)
 })
 
+// mongodb+srv://delamadridlucia_db_user:<db_password>@cluster0.xskqtp9.mongodb.net/?

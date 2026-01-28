@@ -97,6 +97,17 @@
   cursor: pointer;
 }
 
+.form-foot {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.form-muted {
+  color: #6b7280;
+  margin: 0;
+}
+
 @media (max-width: 900px){
   .form-row.row--3{
     grid-template-columns: 1fr;

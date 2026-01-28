@@ -9,8 +9,8 @@ export default function FormService() {
   const [variant, setVariant] = useState("");
 
   const [personal, setPersonal] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
+    institution: "",
     email: "",
     phone: "",
     city: "",
@@ -100,6 +100,12 @@ export default function FormService() {
               Place another order
             </button>
           </div>
+
+          <div className="form-foot">
+            <p className="form-muted">
+              Tip: keep your Tracking ID to check progress anytime.
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -174,6 +180,7 @@ export default function FormService() {
                     onChange={(e) => setGene(e.target.value)}
                     placeholder="e.g. BRCA1"
                     disabled={isSubmitting}
+                    tabIndex={1}
                   />
                 )}
               </div>
@@ -190,6 +197,7 @@ export default function FormService() {
                   onChange={(e) => setVariant(e.target.value)}
                   placeholder="e.g. F11C"
                   disabled={isSubmitting}
+                  tabIndex={2}
                 />
               </div>
             </div>
@@ -204,13 +212,13 @@ export default function FormService() {
             {/* Left column */}
             <div className="form-col">
               <div className="form-group">
-                <label>First Name:</label>
+                <label>Full Name:</label>
                 <input
                   required
-                  name="firstName"
-                  value={personal.firstName}
+                  name="fullName"
+                  value={personal.fullName}
                   onChange={handlePersonalChange}
-                  tabIndex={1}
+                  tabIndex={3}
                   disabled={isSubmitting}
                 />
               </div>
@@ -223,7 +231,7 @@ export default function FormService() {
                   type="email"
                   value={personal.email}
                   onChange={handlePersonalChange}
-                  tabIndex={3}
+                  tabIndex={5}
                   disabled={isSubmitting}
                 />
               </div>
@@ -235,7 +243,7 @@ export default function FormService() {
                   name="city"
                   value={personal.city}
                   onChange={handlePersonalChange}
-                  tabIndex={5}
+                  tabIndex={7}
                   disabled={isSubmitting}
                 />
               </div>
@@ -244,13 +252,13 @@ export default function FormService() {
             {/* Right column */}
             <div className="form-col">
               <div className="form-group">
-                <label>Last Name:</label>
+                <label>Institution:</label>
                 <input
                   required
-                  name="lastName"
-                  value={personal.lastName}
+                  name="institution"
+                  value={personal.institution}
                   onChange={handlePersonalChange}
-                  tabIndex={2}
+                  tabIndex={4}
                   disabled={isSubmitting}
                 />
               </div>
@@ -263,7 +271,7 @@ export default function FormService() {
                   type="tel"
                   value={personal.phone}
                   onChange={handlePersonalChange}
-                  tabIndex={4}
+                  tabIndex={6}
                   disabled={isSubmitting}
                 />
               </div>
@@ -275,7 +283,7 @@ export default function FormService() {
                   name="zipCode"
                   value={personal.zipCode}
                   onChange={handlePersonalChange}
-                  tabIndex={6}
+                  tabIndex={8}
                   disabled={isSubmitting}
                 />
               </div>
