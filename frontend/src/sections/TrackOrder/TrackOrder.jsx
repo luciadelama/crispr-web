@@ -7,7 +7,7 @@ const API_BASE = "http://localhost:4000";
 
 const STEPS = [
   "Order received",
-  "Preparing order",
+  "Functional Assay",
   "Sequencing",
   "Analyzing results",
   "Completed",

@@ -208,17 +208,29 @@ export default function FormService() {
           {/* ================= Personal Details (2 columns) ================= */}
           <h2>Your Personal Details</h2>
 
+          <div className="form-group full-width">
+            <label>Full Name:</label>
+            <input
+              required
+              name="fullName"
+              value={personal.fullName}
+              onChange={handlePersonalChange}
+              tabIndex={3}
+              disabled={isSubmitting}
+            />
+          </div>
+
+          {/* Left column */}
           <div className="form-row row--2">
-            {/* Left column */}
             <div className="form-col">
               <div className="form-group">
-                <label>Full Name:</label>
+                <label>Institution:</label>
                 <input
                   required
-                  name="fullName"
-                  value={personal.fullName}
+                  name="institution"
+                  value={personal.institution}
                   onChange={handlePersonalChange}
-                  tabIndex={3}
+                  tabIndex={4}
                   disabled={isSubmitting}
                 />
               </div>
@@ -252,11 +264,11 @@ export default function FormService() {
             {/* Right column */}
             <div className="form-col">
               <div className="form-group">
-                <label>Institution:</label>
+                <label>EAN Number:</label>
                 <input
                   required
-                  name="institution"
-                  value={personal.institution}
+                  name="eannumber"
+                  value={personal.eannumber}
                   onChange={handlePersonalChange}
                   tabIndex={4}
                   disabled={isSubmitting}

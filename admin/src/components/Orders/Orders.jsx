@@ -66,6 +66,16 @@ const Orders = () => {
         }
     }
 
+    const daysSince = (createdAt) => {
+        const createdDate = new Date(createdAt);
+        const today = new Date();
+
+        const diffTime = today - createdDate; // diferencia en ms
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        return diffDays;
+    };
+
     useEffect(() => {
         fetchGenes();
     }, []);
@@ -115,8 +125,10 @@ const Orders = () => {
                                     <th>Variant</th>
                                     <th>Name</th>
                                     <th>Institution</th>
+                                    <th>EAN</th>
                                     <th>Contact</th>
                                     <th>Date</th>
+                                    <th>Days since</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -136,11 +148,13 @@ const Orders = () => {
                                         <td>{o.variant}</td>
                                         <td>{o.customer.fullName || "-"}</td>
                                         <td>{o.customer.institution || "-"}</td>
+                                        <td>{o.customer.eannumber || "-"}</td>
                                         <td className="contact-cell">
                                             <div className="contact-email">{o.customer?.email || "-"}</div>
                                             <div className="contact-phone">{o.customer?.phone || "-"}</div>
                                         </td>
                                         <td>{created ? new Date(created).toLocaleString() : "-"}</td>
+                                        <td>{daysSince(o.createdAt)} days</td>
                                         <td>
                                             <select 
                                                 className="status-select"
@@ -148,7 +162,7 @@ const Orders = () => {
                                                 value={o.status || "Order received"}
                                             >
                                                 <option value="Order received">Order received</option>
-                                                <option value="Preparing order">Preparing order</option>
+                                                <option value="Functional Assay">Functional Assay</option>
                                                 <option value="Sequencing">Sequencing</option>
                                                 <option value="Analyzing results">Analyzing results</option>
                                                 <option value="Completed">Completed</option>

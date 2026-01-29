@@ -21,6 +21,7 @@ const placeOrder = async (req,res) =>{
             customer: {
                 fullName: personal.fullName,
                 institution: personal.institution,
+                eannumber: personal.eannumber,
                 email: personal.email,
                 phone: personal.phone,
                 city: personal.city,
@@ -66,6 +67,7 @@ const listOrders = async (req, res) => {
                 { variant: { $regex: safe, $options: "i" } },
                 { "customer.fullName": { $regex: safe, $options: "i" } },
                 { "customer.institution": { $regex: safe, $options: "i" } },
+                { "customer.eannumber": { $regex: safe, $options: "i" } },
                 { "customer.email": { $regex: safe, $options: "i" } },
                 { "customer.phone": { $regex: safe, $options: "i" } },
             ];

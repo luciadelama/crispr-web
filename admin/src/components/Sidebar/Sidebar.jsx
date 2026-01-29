@@ -36,7 +36,7 @@ const Sidebar = ({
         <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
           <option value="all">All</option>
           <option value="Order received">Order received</option>
-          <option value="Preparing order">Preparing order</option>
+          <option value="Functional Assay">Functional Assay</option>
           <option value="Sequencing">Sequencing</option>
           <option value="Analyzing results">Analyzing results</option>
           <option value="Completed">Completed</option>
