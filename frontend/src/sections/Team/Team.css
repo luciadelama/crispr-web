@@ -1,0 +1,44 @@
+.team-section{
+    min-height: 45vh;
+    width: 100%;
+    background: lightblue;
+}
+
+.team-section h1{
+    padding: 25px;
+    text-align: center;
+}
+
+.people{
+    width: 80%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.person .photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.person .name{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.person .position {
+    font-size: 1.2rem;        
+    color: #64748b;           
+    margin-top: 5px;
+}

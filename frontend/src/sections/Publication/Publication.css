@@ -1,0 +1,25 @@
+.publication {
+  max-width: 600px;
+}
+
+.publication img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.publication a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #005f8f;
+  text-decoration: none;
+}
+
+.publication a:hover {
+  text-decoration: underline;
+}
+
+.publication p {
+  font-size: 14px;
+  color: #475569;
+  margin-top: 10px;
+}

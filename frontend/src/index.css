@@ -22,6 +22,10 @@ a{
 }
 
 .app{
-  width: 80%;
+  width: 100%;
   margin: auto;
+}
+
+html {
+  scroll-behavior: smooth;
 }

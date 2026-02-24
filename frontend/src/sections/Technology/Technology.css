@@ -1,0 +1,150 @@
+.tech-section{
+    width: 100%;
+    padding: 80px 0;
+}
+
+.tech-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tech-tabs {
+  display: inline-flex;
+  gap: 10px;
+  padding: 6px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #f8fafc;
+  margin: 18px 0 28px;
+}
+
+.tech-tab {
+  border: 0;
+  background: transparent;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: large;
+  color: #475569;
+  transition: 0.2s;
+}
+
+.tech-tab.active {
+  background: #005f8f;
+  color: white;
+}
+
+.tech-layout{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; 
+  gap: 40px;
+  align-items: start;
+}
+
+.tech-left h2 {
+  margin-bottom: 20px;   
+}
+
+.info-block p {
+    font-size: larger;
+    text-align: justify;
+    line-height: 1.5;
+    margin: 0 0 14px;
+    color: #334155;
+}
+
+.crispr-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.crispr-figure {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+.gene-coverage {
+  padding: 80px 20px;
+}
+
+.gene-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 15px auto;
+}
+
+.gene-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.gene-grid {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.gene-panel {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.gene-panel p {
+  margin-bottom: 15px;
+  font-size: larger;
+}
+
+.gene-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gene-panel li {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: #eef6ff;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.future-note {
+  color: #042e69;
+  font-size: large;
+}
+
+.splicing-list {
+  margin-top: 8px;
+  margin-left: 30px;     
+  padding-left: 10px;    
+  line-height: 1.7;
+}
+
+.splicing-list li {
+  margin-bottom: 6px;
+}
+
+.minigene-panel {
+  margin-top: 20px;
+}
+
+.minigene-panel p {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #eef6ff;   
+  color: #0b4a6f;
+  font-weight: 500;
+}

@@ -1,8 +1,14 @@
 .navbar {
     padding: 20px 0px;
-    display: flex;                      /* Turns items into flex and responsive layout */
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+}
+
+.navbar-container{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;                      /* Turns items into flex and responsive layout */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar .logo {
