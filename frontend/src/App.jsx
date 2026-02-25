@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./sections/Hero/Hero";
+import AboutUs from "./sections/AboutUs/AboutUs";
 import Technology from "./sections/Technology/Technology";
 import Publication from "./sections/Publication/Publication";
 import Team from "./sections/Team/Team";
@@ -13,7 +14,9 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Hero />
+      <AboutUs />
       <Technology />
+      <Publication />
       <Team />
       <Information />
       <Routes>

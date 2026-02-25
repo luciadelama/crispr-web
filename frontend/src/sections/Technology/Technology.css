@@ -1,6 +1,6 @@
 .tech-section{
-    width: 100%;
-    padding: 80px 0;
+  width: 100%;
+  padding: 80px 0;
 }
 
 .tech-container {
@@ -134,6 +134,7 @@
 
 .splicing-list li {
   margin-bottom: 6px;
+  font-size: larger;
 }
 
 .minigene-panel {
@@ -147,4 +148,5 @@
   background: #eef6ff;   
   color: #0b4a6f;
   font-weight: 500;
+  font-size: larger;
 }
