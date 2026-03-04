@@ -1,0 +1,76 @@
+.steps-section {
+    width: 100%;
+}
+
+.stepper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  gap: 30px;
+  margin-left: 100px;
+}
+
+.stepper::before{
+    content: "";
+    position: absolute;
+    background-color: #005f8f;
+    width: 4px;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+}
+
+.stepper:first-child::before {
+  top: 50px;
+}
+
+.stepper:last-child::before {
+  bottom: 8px;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-items: left;
+  gap: 15px;
+}
+
+.circle {
+    background-color: #005f8f;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: -40px; 
+    z-index: 1;
+    color: white;
+}
+
+.step-content h2 {
+  margin: 0;
+  text-align: left;
+}
+
+.step-content p {
+  margin: 8px 0 0 0;
+  max-width: 600px; 
+  font-size: large;
+  text-align: justify;
+}
+
+.list {
+  margin-bottom: 6px;
+  font-size: large;
+  color: #000000;
+  margin-top: 8px;
+  margin-left: 30px;     
+  padding-left: 10px;    
+  line-height: 1.7;
+  text-align: left;
+}

@@ -5,6 +5,7 @@ import AboutUs from "./sections/AboutUs/AboutUs";
 import Technology from "./sections/Technology/Technology";
 import Publication from "./sections/Publication/Publication";
 import Team from "./sections/Team/Team";
+import Steps from "./sections/Steps/Steps";
 import Information from "./sections/Information/Information";
 import TrackOrder from "./sections/TrackOrder/TrackOrder";
 
@@ -18,7 +19,10 @@ const App = () => {
       <Technology />
       <Publication />
       <Team />
-      <Information />
+      <div className="steps-info-section">
+        <Information />
+        <Steps />
+      </div>
       <Routes>
         <Route path="/track/:trackingId" element={<TrackOrder />} />
       </Routes>

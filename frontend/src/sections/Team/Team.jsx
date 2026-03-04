@@ -5,7 +5,7 @@ import { assets } from '../../assets/assets'
 const Team = () => {
   return (
     <section id="team" className='team-section'>
-      <h1>MEET THE TEAM</h1>
+      <h1>Meet the Team</h1>
       <div className="people">
         <div className="person">
             <img src={assets.person} alt="Person" className='photo'/>

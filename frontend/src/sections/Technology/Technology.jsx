@@ -96,7 +96,7 @@ const MinigeneContent = () => (
 
       <div className="info-block">
         <p>
-          MiniGene assays for evaluation of potential splice-altering variants.
+          MiniGene assays are used for evaluation of potential splice-altering variants.
         </p>
         <p>
           MiniGene assays enable experimental validation of:

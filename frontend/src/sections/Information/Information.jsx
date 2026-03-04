@@ -112,7 +112,8 @@ export default function FormService() {
   }
 
   return (
-    <div className="home">
+    <section id="info" className="info-section">
+      <h1>How it works</h1>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           {/* ================= Variant Information (3 columns) ================= */}
@@ -313,6 +314,6 @@ export default function FormService() {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }

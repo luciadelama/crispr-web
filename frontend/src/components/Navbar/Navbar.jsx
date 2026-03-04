@@ -53,6 +53,7 @@ const Navbar = () => {
           <ul className="navbar-menu">
             <li><a href="#technology">Technology</a></li>
             <li><a href="#team">Team</a></li>
+            <li><a href="#steps">How it works</a></li>
           </ul>
           <div className="track-dropdown" ref={dropdownRef}>
             <button
