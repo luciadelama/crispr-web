@@ -1,6 +1,9 @@
 .aboutus-section {
   width: 100%;          
   padding: 35px 0;
+  margin-top: -200px;
+  position: relative;
+  z-index: 2;
 }
 
 .about-us {
