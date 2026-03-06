@@ -171,7 +171,6 @@ export default function FormService() {
                     <option value="">--Select--</option>
                     <option value="BRCA1">BRCA1</option>
                     <option value="BRCA2">BRCA2</option>
-                    <option value="*">*</option>
                   </select>
                 ) : (
                   <input

@@ -1,6 +1,6 @@
 .aboutus-section {
   width: 100%;          
-  padding: 80px 0;
+  padding: 35px 0;
 }
 
 .about-us {
@@ -9,16 +9,15 @@
   margin: 0 auto;       
 }
 
-
 .about-us h1 {
   margin-bottom: 20px;   
-  color: #334155;
+  color: #0A6CB4;
 }
 
 .about-us p {
     font-size: larger;
     text-align: justify;
     line-height: 1.5;
-    color: #334155;
+    color: black;
 }
 

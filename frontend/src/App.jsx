@@ -8,6 +8,7 @@ import Team from "./sections/Team/Team";
 import Steps from "./sections/Steps/Steps";
 import Information from "./sections/Information/Information";
 import TrackOrder from "./sections/TrackOrder/TrackOrder";
+import Footer from "./components/Footer/Footer";
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
       <Routes>
         <Route path="/track/:trackingId" element={<TrackOrder />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

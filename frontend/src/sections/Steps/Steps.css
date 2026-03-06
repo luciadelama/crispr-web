@@ -29,12 +29,13 @@
   bottom: 8px;
 }
 
-.step {
+.stepper .step {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-items: left;
+  justify-content: left;
   gap: 15px;
+  margin-left: -5px;
 }
 
 .circle {
@@ -44,10 +45,11 @@
     border-radius: 50%;
 
     display: flex;
+
+    /* Center the content inside the circle */
     align-items: center;
     justify-content: center;
-
-    margin-left: -40px; 
+ 
     z-index: 1;
     color: white;
 }
