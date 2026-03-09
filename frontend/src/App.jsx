@@ -16,7 +16,6 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Hero />
-      <AboutUs />
       <Technology />
       <Publication />
       <Team />
