@@ -24,7 +24,7 @@ const Steps = () => {
                         <li>Genome build hg38</li>
                         <li>Contact information</li>
                     </ul>
-                    <p>Accute transcript and codon information are essential for assay design.</p>
+                    <p>Accurate transcript and codon information are essential for assay design.</p>
                     <p>No biological specimen is required.</p>
                 </div>
             </div>

@@ -3,7 +3,7 @@
     background-position: right bottom;
     background-repeat: no-repeat;
 
-    min-height: 100vh;
+    min-height: calc(100vh + 80px);
 
     display:flex;
     align-items: center;
@@ -26,8 +26,8 @@
 .hero-content {
     max-width: 680px;
     z-index: 1;
-    margin-left: -750px;
-    margin-top: -400px;
+    margin-left: -800px;
+    margin-top: -300px;
 }
 
 .hero-content h1{

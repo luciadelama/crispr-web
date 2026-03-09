@@ -22,7 +22,7 @@ const Hero = () => {
 
         <div className="hero-buttons">
           <a href="#technology" className="btn btn-primary">Explore our technology</a>
-          <a href="#steps" className="btn btn-secondary">Submit order</a>
+          <a href="#steps" className="btn btn-secondary">Submit variant</a>
         </div>
         <p className="hero-note">
           Pilot implementation funded by BETA.HEALTH.
