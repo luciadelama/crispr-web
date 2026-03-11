@@ -67,8 +67,11 @@ const Navbar = () => {
     if (e.key === "Escape") setOpenTrack(false);
   };
 
+  // keep navbar visible while track dropdown is open
+  const navbarVisible = showNavbar || openTrack;
+
   return (
-    <nav className={`navbar ${showNavbar ? "navbar-show" : "navbar-hide"}`}>
+    <nav className={`navbar ${navbarVisible ? "navbar-show" : "navbar-hide"}`}>
       <div className="navbar-container">
         <Link to="/" className="logo-link" aria-label="Go to home">
           <img src={assets.logo} alt="Logo" className="logo" />

@@ -1,5 +1,5 @@
 .publi-section {
-  background-color: #005f8f;
+  background: #0A6CB4;
   padding: 60px 150px;
   display:flex;
 }
@@ -22,7 +22,7 @@
   text-align: justify;
   line-height: 1.5;
   margin: 0 0 14px 40px;
-  color: lightblue;
+  color: #000C7B;
 }
 
 .publication-right {
@@ -39,7 +39,7 @@
 .publication-right a {
   font-size: 25px;
   font-weight: 600;
-  color: lightblue;
+  color: #CFE2FC;
   text-decoration: none;
 }
 

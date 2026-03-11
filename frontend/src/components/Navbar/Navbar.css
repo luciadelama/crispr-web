@@ -11,7 +11,7 @@
 
     transition: transform 0.3s ease, opacity 0.3s ease;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 .navbar-show {

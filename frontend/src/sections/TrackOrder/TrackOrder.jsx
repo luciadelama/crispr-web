@@ -99,22 +99,22 @@ const TrackOrder = () => {
         </div>
 
         {/* Stepper */}
-        <div className="stepper">
-          <div className="stepper-line">
-            <div className="stepper-line-fill" style={{ width: `${progressPct}%` }} />
+        <div className="track-stepper">
+          <div className="track-stepper-line">
+            <div className="track-stepper-line-fill" style={{ width: `${progressPct}%` }} />
           </div>
 
-          <div className="steps">
+          <div className="track-steps">
             {STEPS.map((label, i) => {
               const state =
                 i < currentIndex ? "done" : i === currentIndex ? "active" : "todo";
 
               return (
-                <div className={`step ${state}`} key={label}>
+                <div className={`track-step ${state}`} key={label}>
                   <div className="node">
                     {i < currentIndex ? "✓" : i + 1}
                   </div>
-                  <div className="step-label">{label}</div>
+                  <div className="track-step-label">{label}</div>
                 </div>
               );
             })}
