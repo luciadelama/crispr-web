@@ -32,11 +32,6 @@ a{
 
 .content{
   flex: 1 1 auto;
-  /* reserve space so centered content sits between navbar and footer */
-  min-height: calc(100vh - var(--navbar-height, 72px) - var(--footer-height, 120px));
-  padding-top: var(--navbar-height, 72px);
-  padding-bottom: var(--footer-height, 120px);
-  box-sizing: border-box;
 }
 
 html {
