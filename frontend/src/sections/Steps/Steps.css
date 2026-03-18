@@ -1,5 +1,11 @@
 .steps-section {
     width: 100%;
+    margin-top: 40px;
+}
+
+.steps-section h1 {
+  color: #005f8f;
+  margin: 20px 60px;
 }
 
 .stepper {
@@ -9,6 +15,7 @@
   padding-left: 40px;
   gap: 30px;
   margin-left: 100px;
+  margin-top: 30px;
 }
 
 .stepper::before{
@@ -34,8 +41,8 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: left;
-  gap: 15px;
-  margin-left: -5px;
+  gap: 10px;
+  margin-left: -40px;
 }
 
 .circle {
@@ -64,6 +71,10 @@
   max-width: 600px; 
   font-size: large;
   text-align: justify;
+}
+
+.step-content b {
+  color: #005f8f;
 }
 
 .list {

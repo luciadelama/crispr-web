@@ -1,7 +1,19 @@
-.info-section h1 {
+.submit-title-wrapper {
+  background: linear-gradient(90deg, #e8f3ff, #f5faff);
+  padding: 2px 5px;
+  border-radius: 10px;
+  border-left: 5px solid #2e7fb4;
+  margin-bottom: 25px;
+}
+
+.submit-title {
   color: #005f8f;
   text-align: center;
   margin: 40px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 .form-container {
@@ -11,10 +23,13 @@
   padding: 24px;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  margin: 15px 100px;
-  display: flex;
-  justify-content: center;   
-  align-items: center;     
+  margin: 15px 80px; /* center container, remove fixed side margins */
+  display: block;
+}
+
+.form-container > form {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-container h2 {
@@ -30,11 +45,17 @@
 }
 
 .form-row.row--3 {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1.2fr 1fr;
 }
 
 .form-row.row--2 {
   grid-template-columns: repeat(2, 1fr);
+}
+
+textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
 }
 
 .form-col {
@@ -123,12 +144,24 @@
 @media (max-width: 900px){
   .form-row.row--3{
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
 @media (max-width: 700px){
   .form-row.row--2{
     grid-template-columns: 1fr;
+  }
+}
+
+/* Spacing for thank-you box shown after submit */
+.thank-container {
+  margin-top: 250px; /* match hero/content vertical offset */
+}
+
+@media (max-width: 900px){
+  .thank-container {
+    margin-top: 80px;
   }
 }
 

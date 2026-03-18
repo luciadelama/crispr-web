@@ -23,8 +23,15 @@ a{
 
 .app{
   width: 100%;
-  margin: auto;
+  margin: 0;
   background-color: #FDFDFE;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content{
+  flex: 1 1 auto;
 }
 
 html {
@@ -40,4 +47,29 @@ html {
 
 .steps-info-section > * {
   flex: 1;
+}
+
+/* Layout tokens and reusable container for consistent margins/widths */
+:root{
+  --container-max-width: 1200px; /* adjust as needed */
+  --container-padding: 20px;     /* horizontal padding on small viewports */
+  --navbar-height: 72px;
+  --footer-height: 120px;
+}
+
+/* Centered content wrapper to standardize section widths/margins */
+.container{
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  box-sizing: border-box;
+}
+
+/* Optional helper you can add inside section roots for full-width backgrounds
+   with centered inner content: place `.container` inside a section element. */
+.section{
+  width: 100%;
 }

@@ -91,7 +91,7 @@ export default function FormService() {
   if (isSubmitted) {
     return (
       <div className="home">
-        <div className="form-container">
+        <div className="form-container thank-container">
           <h2>Thanks for your order #{trackingId}</h2>
           <p>We have received your request and will contact you by email.</p>
 
@@ -113,7 +113,9 @@ export default function FormService() {
 
   return (
     <section id="info" className="info-section">
-      <h1>How it works</h1>
+      <div className="submit-title-wrapper">
+        <h2 className="submit-title">Submit your variant here</h2>
+      </div>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           {/* ================= Variant Information (3 columns) ================= */}
@@ -162,15 +164,15 @@ export default function FormService() {
             </div>
 
             {/* Gene */}
-            <div className="form-col">
+            <div className="form-col gene-col">
               <div className="form-group">
                 <label>Gene:</label>
 
                 {assay === "vus_class" ? (
                   <select value={gene} onChange={(e) => setGene(e.target.value)} required disabled={isSubmitting}>
                     <option value="">--Select--</option>
-                    <option value="BRCA1">BRCA1</option>
-                    <option value="BRCA2">BRCA2</option>
+                    <option value="BRCA1">BRCA1 (NM_007294.4)</option>
+                    <option value="BRCA2">BRCA2 (NM_000059.4)</option>
                   </select>
                 ) : (
                   <input
@@ -178,7 +180,7 @@ export default function FormService() {
                     type="text"
                     value={gene}
                     onChange={(e) => setGene(e.target.value)}
-                    placeholder="e.g. BRCA1"
+                    placeholder="e.g. BRCA1 (NM_007294.4)"
                     disabled={isSubmitting}
                     tabIndex={1}
                   />
@@ -187,7 +189,7 @@ export default function FormService() {
             </div>
 
             {/* Variant */}
-            <div className="form-col">
+            <div className="form-col variant-col">
               <div className="form-group">
                 <label>Variant:</label>
                 <input
@@ -195,12 +197,23 @@ export default function FormService() {
                   type="text"
                   value={variant}
                   onChange={(e) => setVariant(e.target.value)}
-                  placeholder="e.g. F11C"
+                  placeholder="e.g. c.1A>G (p.Met1Val)"
                   disabled={isSubmitting}
                   tabIndex={2}
                 />
               </div>
             </div>
+          </div>
+
+          <div className="form-group full-width">
+            <label>Any additional comments?</label>
+            <textarea
+              name="comments"
+              value={personal.comments}
+              onChange={handlePersonalChange}
+              tabIndex={3}
+              disabled={isSubmitting}
+            />
           </div>
 
           <br />
@@ -215,7 +228,7 @@ export default function FormService() {
               name="fullName"
               value={personal.fullName}
               onChange={handlePersonalChange}
-              tabIndex={3}
+              tabIndex={4}
               disabled={isSubmitting}
             />
           </div>

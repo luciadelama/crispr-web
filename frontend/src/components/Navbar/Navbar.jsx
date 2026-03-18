@@ -6,10 +6,14 @@ import { assets } from '../../assets/assets'
 const Navbar = () => {
   const [openTrack, setOpenTrack] = useState(false);
   const [trackId, setTrackId] = useState("");
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   const navigate = useNavigate();
 
   const dropdownRef = useRef(null);
   const inputRef = useRef(null);
+  const lastScrollY = useRef(0);
 
   const goTrack = () => {
     const cleaned = trackId.trim().toUpperCase();
@@ -37,13 +41,37 @@ const Navbar = () => {
     }
   }, [openTrack]);
 
+ useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    const diff = currentScrollY - lastScrollY.current;
+
+    if (currentScrollY < 80) {
+      setShowNavbar(true);
+    } else if (diff < -10) {
+      setShowNavbar(true);
+    } else if (diff > 10) {
+      setShowNavbar(false);
+      setOpenTrack(false);
+    }
+
+    lastScrollY.current = currentScrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   const onKeyDown = (e) => {
     if (e.key === "Enter") goTrack();
     if (e.key === "Escape") setOpenTrack(false);
   };
 
+  // keep navbar visible while track dropdown is open
+  const navbarVisible = showNavbar || openTrack;
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${navbarVisible ? "navbar-show" : "navbar-hide"}`}>
       <div className="navbar-container">
         <Link to="/" className="logo-link" aria-label="Go to home">
           <img src={assets.logo} alt="Logo" className="logo" />

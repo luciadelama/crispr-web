@@ -11,6 +11,7 @@ const Steps = () => {
     ]
   return (
     <section id="steps" className='steps-section'>
+        <h1>How it works</h1>
         <div className="stepper">
             <div className="step">
                 <div className="circle">1</div>
@@ -19,12 +20,12 @@ const Steps = () => {
                     <p>Complete the submission form with:</p>
                     <ul className="list">
                         <li>Gene name</li>
+                        <li><b>MANE</b> transcript reference</li>
                         <li>Codon-level variant details</li>
-                        <li>MANE transcript reference</li>
-                        <li>Genome build hg38</li>
+                        <li>Genome build <b>hg38</b></li>
                         <li>Contact information</li>
                     </ul>
-                    <p>Accute transcript and codon information are essential for assay design.</p>
+                    <p>Accurate transcript and codon information are essential for assay design.</p>
                     <p>No biological specimen is required.</p>
                 </div>
             </div>

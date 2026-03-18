@@ -114,6 +114,9 @@ const MinigeneContent = () => (
         <p>MiniGene assays can be designed for any gene of interest upon request. </p>
       </div>
     </div>
+    <div className="minigene-right">
+      <img src={assets.minigene} alt="MiniGene" className="minigene-figure" />
+    </div>
   </div>
 )
 
