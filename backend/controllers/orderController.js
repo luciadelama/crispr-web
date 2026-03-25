@@ -1,4 +1,5 @@
 import orderModel from "../models/orderModel.js"
+import { sendOrderConfirmation } from "../services/emailService.js";
 import crypto from "crypto"
 
 // placing order for frontend
@@ -30,6 +31,12 @@ const placeOrder = async (req,res) =>{
         });
 
         await newOrder.save();
+
+        await sendOrderConfirmation(
+            personal.email,
+            personal.fullName,
+            trackingId
+        );
 
         return res.status(201).json({
             success: true,

@@ -15,12 +15,12 @@ import {
   Text,
 } from "@react-email/components";
 
-export default function OrderConfirmationEmail({ firstName, trackingId }) {
-  const logoUrl = "https://via.placeholder.com/180x50?text=Variant+to+Treatment";
-  const betaLogoUrl = "https://via.placeholder.com/120x40?text=BETA.HEALTH";
-  const regionLogoUrl = "https://via.placeholder.com/120x40?text=Region";
+export default function OrderConfirmationEmail({ fullName, trackingId }) {
+  const logoUrl = `${process.env.FRONTEND_URL}/images/logo.png`;
+  const betaLogoUrl = `${process.env.FRONTEND_URL}/images/beta_health_dk_logo.png`;
+  const regionLogoUrl = `${process.env.FRONTEND_URL}/images/logo_regionh.png`;
 
-  const trackOrderUrl = "https://example.com/track-order";
+  const trackOrderUrl = `${process.env.FRONTEND_URL}/track/${trackingId}`;
   const contactEmail = "your@email.com";
   const contactPhone = "+4512345678";
 
@@ -38,9 +38,9 @@ export default function OrderConfirmationEmail({ firstName, trackingId }) {
             <Text style={heroTitle}>
               Thanks for submitting your variant</Text>
 
-            <Text style={heroText}>Hi {firstName},</Text>
+            <Text style={heroText}>Dear {fullName},</Text>
             <Text style={heroText}>
-              We have received your submission successfully, our team is preparing everything carefully.
+              We have received your submission successfully and our team is preparing everything carefully.
               You can check its status anytime on our website using your tracking ID below.
             </Text>
 

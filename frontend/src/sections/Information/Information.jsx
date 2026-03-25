@@ -61,7 +61,7 @@ export default function FormService() {
       await fetch('/api/email/send', {
         method: "POST",
         body: JSON.stringify({
-          firstName: personal.fullName.split(" ")[0],
+          fullName: personal.fullName,
           trackingId: data.trackingId || "N/A",
         }),
       })
@@ -87,8 +87,7 @@ export default function FormService() {
     setGene("");
     setVariant("");
     setPersonal({
-      firstName: "",
-      lastName: "",
+      fullName: "",
       email: "",
       phone: "",
       city: "",

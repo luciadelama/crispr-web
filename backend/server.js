@@ -1,10 +1,12 @@
+import dotenv from "dotenv"
+dotenv.config()
+
 import express from "express"
 import cors from "cors"
-import dotenv from "dotenv"
 import { connectDB } from "./config/db.js"
 import orderRouter from "./routes/orderRoute.js"
 
-dotenv.config()
+
 
 // app config
 const app = express()
