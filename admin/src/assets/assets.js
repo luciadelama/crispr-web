@@ -1,7 +1,9 @@
 import logo from './logo.png'
-import profile_image from './profile_image.png'
+import person from './person.webp'
+import icon from './icon.png'
 
 export const assets = {
     logo,
-    profile_image
+    icon,
+    person
 }

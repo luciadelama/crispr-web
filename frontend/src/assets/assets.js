@@ -6,6 +6,7 @@ import jci from './jci.png'
 import hero from './hero-logo.png'
 import betalogo from './beta_health_dk_logo.png'
 import regionlogo from './logo_regionh.png'
+import icon from './icon.png'
 
 export const assets = {
     logo,
@@ -15,5 +16,6 @@ export const assets = {
     jci,
     hero,
     betalogo,
-    regionlogo
+    regionlogo,
+    icon
 }
