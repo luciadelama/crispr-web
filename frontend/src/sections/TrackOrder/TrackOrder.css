@@ -8,13 +8,13 @@
 
 .track-card {
   width: 100%;
-  max-width: 920px;
+  max-width: 1400px;
   align-items: center;
   background: #ffffff;
   border: 1px solid #e5e7eb; /* gray-200 */
   border-radius: 16px;
   margin:100px;
-  padding: 18px 18px 14px;
+  padding: 32px 32px 24px;
   box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08);
 }
 
@@ -23,18 +23,18 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .track-title {
   margin: 0;
-  font-size: 22px;
+  font-size: 32px;
   color: #111827; /* gray-900 */
 }
 
 .track-sub {
   margin-top: 6px;
-  font-size: 13px;
+  font-size: 18px;
   color: #6b7280; /* gray-500 */
 }
 
@@ -44,17 +44,17 @@
 }
 
 .dot {
-  margin: 0 8px;
+  margin: 0 10px;
 }
 
 .status-badge {
-  padding: 8px 12px;
+  padding: 10px 16px;
   border-radius: 999px;
   border: 1px solid #d1d5db; /* gray-300 */
   background: #f9fafb; /* gray-50 */
   color: #374151; /* gray-700 */
   font-weight: 600;
-  font-size: 13px;
+  font-size: 18px;
   white-space: nowrap;
 }
 
@@ -75,7 +75,7 @@
 /* Stepper layout */
 .track-stepper {
   position: relative;
-  padding: 18px 6px 6px;
+  padding: 12px 6px 12px;
 }
 
 .track-steps {
@@ -114,13 +114,13 @@
 }
 
 .node {
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   display: grid;
   place-items: center;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   border: 2px solid #d1d5db; /* gray-300 */
   background: #ffffff;
   color: #6b7280; /* gray-500 */
@@ -128,7 +128,7 @@
 }
 
 .track-step-label {
-  font-size: 12.5px;
+  font-size: 18px;
   color: #6b7280; /* gray-500 */
   line-height: 1.25;
   max-width: 140px;
