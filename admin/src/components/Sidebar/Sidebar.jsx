@@ -2,6 +2,9 @@ import React from 'react'
 import './Sidebar.css'
 
 const Sidebar = ({
+  assays,
+  assayFilter,
+  setAssayFilter,
   genes,
   geneFilter,
   setGeneFilter,
@@ -21,6 +24,16 @@ const Sidebar = ({
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
+
+        <label>Assay</label>
+        <select value={assayFilter} onChange={(e) => setAssayFilter(e.target.value)}>
+          <option value="all">All</option>
+          {assays.map((a) => (
+            <option key={a} value={a}>
+              {a}
+            </option>
+          ))}
+        </select>
 
         <label>Gene</label>
         <select value={geneFilter} onChange={(e) => setGeneFilter(e.target.value)}>

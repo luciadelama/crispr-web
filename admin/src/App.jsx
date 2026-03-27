@@ -1,8 +1,10 @@
-import Navbar from './components/Navbar/Navbar'
-import Sidebar from './components/Sidebar/Sidebar'
-import Orders from './components/Orders/Orders'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Navbar from "./components/Navbar/Navbar"
+import Orders from "./pages/Orders/Orders"
+import Login from "./pages/Login/Login"
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute"
 
-const App = () => {
+const AppLayout = () => {
   return (
     <div className='app'>
       <Navbar/>
@@ -11,6 +13,19 @@ const App = () => {
         <Orders />
       </div>
     </div>
+  )
+}
+
+const App = () => {
+  return (
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={
+          <ProtectedRoute>
+            <AppLayout />
+          </ProtectedRoute>
+        } />
+      </Routes>
   )
 }
 

@@ -19,6 +19,7 @@ const placeOrder = async (req,res) =>{
             gene,
             variant,
             status: "Order received",
+            comments: personal.comments || "",
             customer: {
                 fullName: personal.fullName,
                 institution: personal.institution,
@@ -57,12 +58,13 @@ const listOrders = async (req, res) => {
         const limit = Math.min(Math.max(parseInt(req.query.limit || "10", 10), 1), 100);
         const skip = (page - 1) * limit;
 
-        const { gene, status, q } = req.query;
+        const { gene, assay, status, q } = req.query;
 
         // Build query
         const filter = {};
 
         if (gene && gene !== "all") filter.gene = gene;
+        if (assay && assay !== "all") filter.assay = assay;
         if (status && status !== "all") filter.status = status;
 
         if (q && q.trim()) {
@@ -115,6 +117,16 @@ const getGenes = async (req, res) => {
     }
 };
 
+const getAssays = async (req, res) => {
+    try {
+        const assays = await orderModel.distinct("assay");
+        res.json({ success: true, data: assays.sort() });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
+};
+
 // api for updating order status
 const updateStatus = async (req, res) => {
     try {
@@ -144,4 +156,4 @@ const trackOrder = async (req, res) => {
   }
 };
 
-export{placeOrder, listOrders, updateStatus, trackOrder, getGenes};
+export{placeOrder, listOrders, updateStatus, trackOrder, getGenes, getAssays};

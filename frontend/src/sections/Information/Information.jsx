@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './Information.css'
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function FormService() {
   const [assay, setAssay] = useState("vus_class");
@@ -15,6 +15,7 @@ export default function FormService() {
     phone: "",
     city: "",
     zipCode: "",
+    comments: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -92,6 +93,7 @@ export default function FormService() {
       phone: "",
       city: "",
       zipCode: "",
+      comments: "",
     });
   };
 

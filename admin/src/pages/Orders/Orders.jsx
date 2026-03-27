@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "./Orders.css"
-import Sidebar from "../Sidebar/Sidebar"; 
+import Sidebar from "../../components/Sidebar/Sidebar"; 
 import axios from "axios"
 
 const API_BASE = import.meta.env.VITE_API_URL;
@@ -8,34 +8,34 @@ const API_BASE = import.meta.env.VITE_API_URL;
 const Orders = () => {
 
     const [orders,setOrders] = useState([]);
-    const [assays, setAssays] = useState([]);
     const [genes, setGenes] = useState([]);
+    const [assays, setAssays] = useState([]);
     const [page, setPage] = useState(1);
     const [limit] = useState(10);
     const [totalPages, setTotalPages] = useState(1);
-    const [assayFilter, setAssayFilter] = useState("all");
     const [geneFilter, setGeneFilter] = useState("all");
+    const [assayFilter, setAssayFilter] = useState("all");
     const [statusFilter, setStatusFilter] = useState("all");
     const [keyword, setKeyword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
-
-    const fetchAssays = async () => {
-        try {
-            const res = await axios.get(`${API_BASE}/api/orders/assays`);
-            if (res.data.success) {
-                setAssays(res.data.data);
-            }
-        } catch (e) {
-            console.log(e);
-        }
-    };
 
     const fetchGenes = async () => {
         try {
             const res = await axios.get(`${API_BASE}/api/orders/genes`);
             if (res.data.success) {
                 setGenes(res.data.data);
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    const fetchAssays = async () => {
+        try {
+            const res = await axios.get(`${API_BASE}/api/orders/assays`);
+            if (res.data.success) {
+                setAssays(res.data.data);
             }
         } catch (e) {
             console.log(e);
@@ -50,8 +50,8 @@ const Orders = () => {
             const params = new URLSearchParams();
             params.set("page", String(page));
             params.set("limit", String(limit));
-            if (assayFilter !== "all") params.set("assay", assayFilter);
             if (geneFilter !== "all") params.set("gene", geneFilter);
+            if (assayFilter !== "all") params.set("assay", assayFilter);
             if (statusFilter !== "all") params.set("status", statusFilter);
             if (keyword.trim()) params.set("q", keyword.trim());
 
@@ -91,20 +91,17 @@ const Orders = () => {
     };
 
     useEffect(() => {
+        fetchGenes();
         fetchAssays();
     }, []);
 
     useEffect(() => {
-        fetchGenes();
-    }, []);
-
-    useEffect(() => {
         setPage(1);
-    }, [assayFilter, geneFilter, statusFilter, keyword]);
+    }, [geneFilter, assayFilter, statusFilter, keyword]);
 
     useEffect(()=>{
         fetchOrders();
-    }, [page, assayFilter, geneFilter, statusFilter, keyword]);
+    }, [page, geneFilter, assayFilter, statusFilter, keyword]);
 
     return (
         <div className="orders-layout">
@@ -120,8 +117,8 @@ const Orders = () => {
                 keyword={keyword}
                 setKeyword={setKeyword}
                 onClear={() => {
-                    setAssayFilter("all");
                     setGeneFilter("all");
+                    setAssayFilter("all");
                     setStatusFilter("all");
                     setKeyword("");
                 }}
@@ -151,6 +148,7 @@ const Orders = () => {
                                     <th>Contact</th>
                                     <th>Date</th>
                                     <th>Days since</th>
+                                    <th>Comments</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -177,6 +175,7 @@ const Orders = () => {
                                         </td>
                                         <td>{created ? new Date(created).toLocaleString() : "-"}</td>
                                         <td>{daysSince(o.createdAt)} days</td>
+                                        <td className="comments-cell">{o.comments ? o.comments : "-"}</td>
                                         <td>
                                             <select 
                                                 className="status-select"

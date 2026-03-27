@@ -5,6 +5,7 @@ import express from "express"
 import cors from "cors"
 import { connectDB } from "./config/db.js"
 import orderRouter from "./routes/orderRoute.js"
+import loginRouter from "./routes/loginRoute.js"
 
 
 
@@ -25,6 +26,7 @@ connectDB();
 
 // api endpoints
 app.use("/api/orders",orderRouter)
+app.use("/api", loginRouter)
 
 app.get("/", (req,res)=>{       
     res.send("API Working")

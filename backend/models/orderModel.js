@@ -16,6 +16,7 @@ const orderSchema = new mongoose.Schema({
         zipCode:{type:String, required:true},
     },
 
+    comments: { type: String, default: "" },
     status:{type:String, default:"Order received"},
     }, 
     { timestamps: true }
