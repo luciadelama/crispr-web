@@ -64,7 +64,7 @@
 
 .footer-note {
   margin: 0;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   line-height: 1.45;
   color: #6b7280;
   max-width: 800px;
@@ -82,4 +82,52 @@
   width: auto;
   object-fit: contain;
   opacity: 0.95;
+}
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 24px 0 14px;
+  }
+
+  .footer-container {
+    width: min(1100px, 94%);
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .footer-col h3 {
+    font-size: 0.9rem;
+  }
+
+  .footer-col p {
+    font-size: 0.8rem;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
+  .footer-project-logo {
+    max-width: 150px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer-funding {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-note {
+    font-size: 0.65rem;
+  }
 }

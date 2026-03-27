@@ -5,6 +5,7 @@ import { assets } from '../../assets/assets'
 
 const Navbar = () => {
   const [openTrack, setOpenTrack] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [trackId, setTrackId] = useState("");
   const [showNavbar, setShowNavbar] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -21,6 +22,7 @@ const Navbar = () => {
     navigate(`/track/${cleaned}`);
     setTrackId("");
     setOpenTrack(false);
+    setMenuOpen(false); 
   };
 
   useEffect(() => {
@@ -28,6 +30,11 @@ const Navbar = () => {
       if (!openTrack) return;
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setOpenTrack(false);
+      }
+
+      if (menuOpen) {
+        const navRight = document.querySelector(".navbar-right");
+        if (navRight && !navRight.contains(e.target)) setMenuOpen(false);
       }
     };
 
@@ -78,16 +85,31 @@ const Navbar = () => {
         </Link>
 
         <div className="navbar-right">
-          <ul className="navbar-menu">
-            <li><a href="#technology">Technology</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#steps">How it works</a></li>
+          <button
+            type="button"
+            className={`hamburger ${menuOpen ? "open" : ""}`}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          
+          <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
+            <li><a href="#technology" onClick={() => setMenuOpen(false)}>Technology</a></li>
+            <li><a href="#team" onClick={() => setMenuOpen(false)}>Team</a></li>
+            <li><a href="#steps" onClick={() => setMenuOpen(false)}>How it works</a></li>
           </ul>
           <div className="track-dropdown" ref={dropdownRef}>
             <button
               type="button"
               className="track-btn"
-              onClick={() => setOpenTrack((v) => !v)}
+              onClick={() => {
+                setOpenTrack((v) => !v);
+                setMenuOpen(false); // close menu when opening track
+              }}
             >
               Track your order
             </button>
