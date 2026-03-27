@@ -48,11 +48,11 @@
 }
 
 .info-block p {
-    font-size: larger;
-    text-align: justify;
-    line-height: 1.5;
-    margin: 0 0 14px;
-    color: #334155;
+  font-size: larger;
+  text-align: justify;
+  line-height: 1.5;
+  margin: 0 0 14px;
+  color: #334155;
 }
 
 .crispr-right {
@@ -165,4 +165,63 @@
   max-width: 450px;
   height: auto;
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .tech-container {
+    width: 92%;
+  }
+
+  .tech-layout {
+    gap: 24px;
+  }
+
+  .gene-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-section {
+    padding: 56px 0;
+  }
+
+  .tech-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-tabs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 16px;
+  }
+
+  .tech-tab {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .crispr-right,
+  .minigene-right {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .gene-grid {
+    gap: 16px;
+  }
+
+  .gene-panel {
+    min-width: 0;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .splicing-list {
+    margin-left: 18px;
+    padding-left: 6px;
+  }
 }
