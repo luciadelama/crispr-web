@@ -86,16 +86,8 @@ html {
   flex: 1;
 }
 
-/* tablet */
-@media (max-width: 1024px) {
-  .steps-info-section {
-    gap: 30px;
-    padding: 50px 0;
-  }
-}
-
 /* mobile */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .steps-info-section {
     flex-direction: column-reverse;
     gap: 30px;
