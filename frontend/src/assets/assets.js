@@ -7,6 +7,10 @@ import hero from './hero-logo.png'
 import betalogo from './beta_health_dk_logo.png'
 import regionlogo from './logo_regionh.png'
 import icon from './icon.png'
+import sofie from './photo_sofie.png'
+import enrique from './photo_enrique.jpg'
+import maria from './photo_maria.jpg'
+/* import mutiah from './photo_mutiah.png' */
 
 export const assets = {
     logo,
@@ -17,5 +21,9 @@ export const assets = {
     hero,
     betalogo,
     regionlogo,
-    icon
+    icon,
+    sofie,
+    enrique,
+    maria,
+    /* mutiah */
 }

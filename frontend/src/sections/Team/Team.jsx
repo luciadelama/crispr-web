@@ -8,22 +8,22 @@ const Team = () => {
       <h1>Meet the Team</h1>
       <div className="people">
         <div className="person">
-            <img src={assets.person} alt="Person" className='photo'/>
-            <p className='name'>Enrique Gómez Castillo</p>
-            <p className='position'>Research Assistant</p>
-        </div>
-        <div className="person">
-            <img src={assets.person} alt="Person" className='photo'/>
+            <img src={assets.maria} alt="Maria Rossing" className='photo'/>
             <p className='name'>Maria Rossing</p>
             <p className='position'>Chief Physician</p>
         </div>
         <div className="person">
-            <img src={assets.person} alt="Person" className='photo'/>
+            <img src={assets.person} alt="Muthiah Bose" className='photo'/>
             <p className='name'>Muthiah Bose</p>
             <p className='position'>Academic Researcher</p>
         </div>
         <div className="person">
-            <img src={assets.person} alt="Person" className='photo'/>
+            <img src={assets.enrique} alt="Enrique Gómez Castillo" className='photo'/>
+            <p className='name'>Enrique Gómez Castillo</p>
+            <p className='position'>Research Assistant</p>
+        </div>
+        <div className="person">
+            <img src={assets.sofie} alt="Sofie Eriksen" className='photo'/>
             <p className='name'>Sofie Eriksen</p>
             <p className='position'>Research Technician</p>
         </div>
