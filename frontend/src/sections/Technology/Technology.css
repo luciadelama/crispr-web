@@ -8,7 +8,6 @@
   margin: 0 auto;
 }
 
-
 .tech-tabs {
   display: inline-flex;
   gap: 10px;
@@ -43,12 +42,16 @@
   align-items: start;
 }
 
+.tech-container h1 {
+  color: #0A6CB4;
+}
+
 .tech-left h2 {
   margin-bottom: 20px;   
 }
 
 .info-block p {
-  font-size: larger;
+  font-size: 22px;
   text-align: justify;
   line-height: 1.5;
   margin: 0 0 14px;
@@ -79,7 +82,7 @@
 }
 
 .gene-title {
-  font-size: 1.25rem;
+  font-size: 22px;
   margin-bottom: 8px;
 }
 
