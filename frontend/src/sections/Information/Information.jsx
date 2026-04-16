@@ -11,6 +11,7 @@ export default function FormService() {
   const [personal, setPersonal] = useState({
     fullName: "",
     institution: "",
+    eannumber: "",
     email: "",
     phone: "",
     city: "",
@@ -89,6 +90,8 @@ export default function FormService() {
     setVariant("");
     setPersonal({
       fullName: "",
+      institution: "",
+      eannumber: "",
       email: "",
       phone: "",
       city: "",
@@ -243,84 +246,73 @@ export default function FormService() {
           </div>
 
           {/* Left column */}
-          <div className="form-row row--2">
-            <div className="form-col">
-              <div className="form-group">
-                <label>Institution:</label>
-                <input
-                  required
-                  name="institution"
-                  value={personal.institution}
-                  onChange={handlePersonalChange}
-                  tabIndex={4}
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Email:</label>
-                <input
-                  required
-                  name="email"
-                  type="email"
-                  value={personal.email}
-                  onChange={handlePersonalChange}
-                  tabIndex={5}
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>City:</label>
-                <input
-                  required
-                  name="city"
-                  value={personal.city}
-                  onChange={handlePersonalChange}
-                  tabIndex={7}
-                  disabled={isSubmitting}
-                />
-              </div>
+          <div className="form-row row--2 personal-grid">
+            <div className="form-group">
+              <label>Institution:</label>
+              <input
+                required
+                name="institution"
+                value={personal.institution}
+                onChange={handlePersonalChange}
+                disabled={isSubmitting}
+              />
             </div>
 
-            {/* Right column */}
-            <div className="form-col">
-              <div className="form-group">
-                <label>EAN Number:</label>
-                <input
-                  required
-                  name="eannumber"
-                  value={personal.eannumber}
-                  onChange={handlePersonalChange}
-                  tabIndex={4}
-                  disabled={isSubmitting}
-                />
-              </div>
+            <div className="form-group">
+              <label>EAN Number:</label>
+              <input
+                required
+                name="eannumber"
+                value={personal.eannumber}
+                onChange={handlePersonalChange}
+                disabled={isSubmitting}
+              />
+            </div>
 
-              <div className="form-group">
-                <label>Phone Number:</label>
-                <input
-                  required
-                  name="phone"
-                  type="tel"
-                  value={personal.phone}
-                  onChange={handlePersonalChange}
-                  tabIndex={6}
-                  disabled={isSubmitting}
-                />
-              </div>
+            <div className="form-group">
+              <label>Email:</label>
+              <input
+                required
+                name="email"
+                type="email"
+                value={personal.email}
+                onChange={handlePersonalChange}
+                disabled={isSubmitting}
+              />
+            </div>
 
-              <div className="form-group">
-                <label>ZIP Code:</label>
-                <input
-                  required
-                  name="zipCode"
-                  value={personal.zipCode}
-                  onChange={handlePersonalChange}
-                  tabIndex={8}
-                  disabled={isSubmitting}
-                />
-              </div>
+            <div className="form-group">
+              <label>Phone Number:</label>
+              <input
+                required
+                name="phone"
+                type="tel"
+                value={personal.phone}
+                onChange={handlePersonalChange}
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <label>City:</label>
+              <input
+                required
+                name="city"
+                value={personal.city}
+                onChange={handlePersonalChange}
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <label>ZIP Code:</label>
+              <input
+                required
+                name="zipCode"
+                value={personal.zipCode}
+                onChange={handlePersonalChange}
+                disabled={isSubmitting}
+              />
             </div>
           </div>
 

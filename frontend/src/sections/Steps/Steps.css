@@ -12,7 +12,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 40px;
+  padding-left: 60px;
   gap: 30px;
   margin-left: 100px;
   margin-top: 30px;
@@ -23,7 +23,7 @@
     position: absolute;
     background-color: #005f8f;
     width: 4px;
-    left: 14px;
+    left: 0;
     top: 0;
     bottom: 0;
 }
@@ -38,11 +38,8 @@
 
 .stepper .step {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  justify-content: left;
   gap: 10px;
-  margin-left: -40px;
 }
 
 .circle {
@@ -56,6 +53,10 @@
     /* Center the content inside the circle */
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
  
     z-index: 1;
     color: white;
@@ -86,4 +87,56 @@
   padding-left: 10px;    
   line-height: 1.7;
   text-align: left;
+}
+
+@media (max-width: 768px) {
+  .steps-section {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .steps-section h1 {
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-size: 2rem;
+  }
+
+  .stepper {
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 32px;
+    gap: 24px;
+  }
+
+  .stepper::before {
+    width: 3px;
+  }
+
+  .stepper .step {
+    gap: 12px;
+  }
+
+  .circle {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .step-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .step-content p,
+  .list {
+    font-size: 1rem;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .list {
+    margin-left: 18px;
+    padding-left: 8px;
+    line-height: 1.5;
+  }
 }
