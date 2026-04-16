@@ -48,13 +48,6 @@
 
 
 @media (max-width: 1024px) {
-  .people {
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 768px) {
   .team-section {
     padding-bottom: 28px;
   }
@@ -65,6 +58,7 @@
 
   .people {
     width: 92%;
+    flex-wrap: wrap;
     gap: 28px;
   }
 

@@ -18,8 +18,8 @@ const Team = () => {
             <p className='position'>Academic Researcher</p>
         </div>
         <div className="person">
-            <img src={assets.enrique} alt="Enrique Gómez Castillo" className='photo'/>
-            <p className='name'>Enrique Gómez Castillo</p>
+            <img src={assets.enrique} alt="Enrique Gómez" className='photo'/>
+            <p className='name'>Enrique Gómez</p>
             <p className='position'>Research Assistant</p>
         </div>
         <div className="person">
