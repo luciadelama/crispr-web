@@ -4,10 +4,8 @@ import { assets } from '../../assets/assets'
 
 const Hero = () => {
   return (
-    <section 
-      className="hero-section"
-      style={{ backgroundImage: `url(${assets.hero})` }}
-    >
+    <section className="hero-section">
+      <div className="hero-img"></div>
       <div className="hero-inner">
         <div className='hero-content'>
           <h1>
