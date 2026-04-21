@@ -16,10 +16,10 @@ const Footer = () => {
             <div className="footer-col footer-contact">
                 <h3>Contact Us</h3>
                 <p>
-                Email: <a href="mailto:your@email.com">your@email.com</a>
+                <a href="mailto:variant2treatment.rigshospitalet@regionh.dk">variant2treatment.rigshospitalet@regionh.dk</a>
                 </p>
                 <p>
-                Tel: <a href="tel:+4512345678">+45 12 34 56 78</a>
+                <a href="tel:+4535458743">+45 35 45 87 43</a>
                 </p>
             </div>
 
