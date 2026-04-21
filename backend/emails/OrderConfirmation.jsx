@@ -21,8 +21,8 @@ export default function OrderConfirmationEmail({ fullName, trackingId }) {
   const regionLogoUrl = `${process.env.FRONTEND_URL}/images/logo_regionh.png`;
 
   const trackOrderUrl = `${process.env.FRONTEND_URL}/track/${trackingId}`;
-  const contactEmail = "your@email.com";
-  const contactPhone = "+4512345678";
+  const contactEmail = "variant2treatment.rigshospitalet@regionh.dk";
+  const contactPhone = "+45 35 45 87 43";
 
   return (
     <Html>
