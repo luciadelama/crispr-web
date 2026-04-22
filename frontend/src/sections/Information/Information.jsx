@@ -129,8 +129,7 @@ export default function FormService() {
         <h2 className="submit-title">Submit your variant here</h2>
       </div>
       <p className="restrict-note">
-          This service is available exclusively to medical and diagnostic professionals. <br />
-          Requests are only accepted when submitted by authorized professionals or institutions in these fields.
+          Requests are only accepted when submitted by authorized professionals or medical institutions.
       </p> 
       <div className="form-container">
         <form onSubmit={handleSubmit}>
