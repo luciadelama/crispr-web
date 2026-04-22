@@ -85,7 +85,7 @@ export default function OrderConfirmationEmail({ fullName, trackingId }) {
                 <Text style={footerText}>
                   Tel{" "}
                   <Link href={`tel:${contactPhone}`} style={footerLink}>
-                    +45 12 34 56 78
+                    {contactPhone}
                   </Link>
                 </Text>
               </Column>

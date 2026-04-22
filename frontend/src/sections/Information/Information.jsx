@@ -198,7 +198,6 @@ export default function FormService() {
                     onChange={(e) => setGene(e.target.value)}
                     placeholder="e.g. BRCA1 (NM_007294.4)"
                     disabled={isSubmitting}
-                    tabIndex={1}
                   />
                 )}
               </div>
@@ -215,7 +214,6 @@ export default function FormService() {
                   onChange={(e) => setVariant(e.target.value)}
                   placeholder="e.g. c.1A>G (p.Met1Val)"
                   disabled={isSubmitting}
-                  tabIndex={2}
                 />
               </div>
             </div>
@@ -227,7 +225,6 @@ export default function FormService() {
               name="comments"
               value={personal.comments}
               onChange={handlePersonalChange}
-              tabIndex={3}
               disabled={isSubmitting}
             />
           </div>
@@ -244,7 +241,6 @@ export default function FormService() {
               name="fullName"
               value={personal.fullName}
               onChange={handlePersonalChange}
-              tabIndex={4}
               disabled={isSubmitting}
             />
           </div>
