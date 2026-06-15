@@ -44,7 +44,7 @@ const Steps = () => {
                         <br /><b>Turnaround Time</b>
                     </p>
                     <ul className="list">
-                        <li>CRISPR-Select assay: 6–8 weeks</li>
+                        <li>Variant classification assay: 6–8 weeks</li>
                         <li>MiniGene assay: Approximately 3 months</li>
                     </ul>
                 </div>

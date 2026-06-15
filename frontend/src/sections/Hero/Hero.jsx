@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="about-us">
           <h1>About Us</h1>
           <p>
-            We provide functional classification of genetic variants using CRISPR-based precision genome editing (CRISPR-Select) and MiniGene splice assays. 
+            We provide functional classification of genetic variants using CRISPR-based precision genome editing and MiniGene splice assays. 
             The service is a part of the MDxCore unit at the Department of Clinical Biochemistry, Rigshospitalet, Copenhagen University Hospital. 
             <br />
             <br />Our platform provides experimental evidence to support clinical variant interpretation 

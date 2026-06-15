@@ -161,11 +161,12 @@
   display: flex;
   justify-content: center;
   margin-top: -20px;
+  margin-left: -60px;
 }
 
 .minigene-figure {
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
   height: auto;
   display: block;
 }

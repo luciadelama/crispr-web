@@ -1,5 +1,4 @@
 import Hero from "../sections/Hero/Hero";
-import AboutUs from "../sections/AboutUs/AboutUs";
 import Technology from "../sections/Technology/Technology";
 import Publication from "../sections/Publication/Publication";
 import Team from "../sections/Team/Team";

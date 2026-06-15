@@ -18,7 +18,7 @@ const Technology = () => {
             role="tab"
             aria-selected={active === "crispr"}
           >
-            CRISPR-Select
+            CRISPR Assay
           </button>
 
           <button
@@ -27,7 +27,7 @@ const Technology = () => {
             role="tab"
             aria-selected={active === "minigene"}
           >
-            MiniGene
+            MiniGene Assay
           </button>
         </div>
 
@@ -40,25 +40,23 @@ const Technology = () => {
 const CrisprContent = () => (
   <div className="tech-layout">
     <div className="tech-left">
-      <h2>Functional Variant Interpretation Using CRISPR-Select</h2>
+      <h2>Functional Variant Interpretation Using CRISPR-based Assays</h2>
 
       <div className="info-block">
         <p>
-          Our platform employs CRISPR-Select, a precision genome editing platform 
-          that enables direct functional assessment of genetic variants within 
+          Our platform employs CRISPR-based genome editing and sequencing-based readout
+          to enable direct functional assessment of genetic variants within 
           their endogenous genomic context.
         </p>
         <p>
-          By introducing specific variants into human cells and measuring their 
-          biological consequences, CRISPR-Select provides quantitative 
+          By introducing defined variants into human cells and measuring their 
+          biological consequences, our approach provides quantitative 
           functional evidence that supports variant classification framework.
         </p>
-        <p>
-          A schematic overview of the CRISPR-Select workflow is provided to 
-          illustrate the editing, selection, and sequencing-based readout process.
-        </p>
       </div>
+    </div>
 
+    <div className="crispr-right">
       <div className="gene-container">
         <h3 className='gene-title'>Gene Coverage</h3>
         <div className="gene-grid">
@@ -83,10 +81,7 @@ const CrisprContent = () => (
         </p>  
       </div>
     </div>
-    <div className="crispr-right">
-      <img src={assets.crispr} alt="CRISPR" className="crispr-figure" />
     </div>
-  </div>
 )
 
 const MinigeneContent = () => (
