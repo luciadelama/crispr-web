@@ -1,28 +1,35 @@
 services:
   frontend:
-    build: ./frontend
+    build: 
+      context: ./frontend
     ports:
       - "5173:5173"
+    environment:
+      - VITE_API_URL= http://localhost:4000
     networks:
       - crispr
     depends_on:
       - backend
   admin:
-    build: ./admin
+    build: 
+      context: ./admin
     ports:
       - "5174:5173"
+    environment:
+      - VITE_API_URL= http://localhost:4000
     networks:
       - crispr
     depends_on:
       - backend
   backend:
-    build: ./backend
+    build: 
+      context: ./backend
     ports:
       - "4000:4000"
     networks:
       - crispr
     env_file:
-      - ./backend/.env
+      - ./backend/.env.development
 
 networks:
   crispr:
