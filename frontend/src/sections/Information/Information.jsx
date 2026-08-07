@@ -52,7 +52,7 @@ export default function FormService() {
         personal,
       };
 
-      const res = await fetch(`${API_BASE}/api/orders/place`, {
+      const res = await fetch(`${API_BASE}/orders/place`, {
         method:"POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -60,7 +60,7 @@ export default function FormService() {
 
       const data = await res.json().catch(() => ({}));
 
-      await fetch('/api/email/send', {
+      await fetch(`${API_BASE}/email/send`, {
         method: "POST",
         body: JSON.stringify({
           fullName: personal.fullName,
