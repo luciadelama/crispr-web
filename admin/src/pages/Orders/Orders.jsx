@@ -22,7 +22,7 @@ const Orders = () => {
 
     const fetchGenes = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/api/orders/genes`);
+            const res = await axios.get(`${API_BASE}/orders/genes`);
             if (res.data.success) {
                 setGenes(res.data.data);
             }
@@ -33,7 +33,7 @@ const Orders = () => {
 
     const fetchAssays = async () => {
         try {
-            const res = await axios.get(`${API_BASE}/api/orders/assays`);
+            const res = await axios.get(`${API_BASE}/orders/assays`);
             if (res.data.success) {
                 setAssays(res.data.data);
             }
@@ -55,7 +55,7 @@ const Orders = () => {
             if (statusFilter !== "all") params.set("status", statusFilter);
             if (keyword.trim()) params.set("q", keyword.trim());
 
-            const res = await axios.get(`${API_BASE}/api/orders/list?${params.toString()}`);
+            const res = await axios.get(`${API_BASE}/orders/list?${params.toString()}`);
             if (res.data.success){
                 setOrders(res.data.data);
                 setTotalPages(res.data.pagination.totalPages);
@@ -71,7 +71,7 @@ const Orders = () => {
     };
 
     const statusHandler = async (event, orderId) => {
-        const response = await axios.post(`${API_BASE}/api/orders/status`,{
+        const response = await axios.post(`${API_BASE}/orders/status`,{
             orderId,
             status:event.target.value
         })

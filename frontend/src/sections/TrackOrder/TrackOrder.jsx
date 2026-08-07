@@ -33,7 +33,7 @@ const TrackOrder = () => {
         setLoading(true);
         setError("");
 
-        const res = await axios.get(`${API_BASE}/api/orders/track/${trackingId}`);
+        const res = await axios.get(`${API_BASE}/orders/track/${trackingId}`);
         if (!res.data.success) {
           setError(res.data.message || "Order not found");
           return;
