@@ -60,14 +60,6 @@ export default function FormService() {
 
       const data = await res.json().catch(() => ({}));
 
-      await fetch(`${API_BASE}/email/send`, {
-        method: "POST",
-        body: JSON.stringify({
-          fullName: personal.fullName,
-          trackingId: data.trackingId || "N/A",
-        }),
-      })
-
       if (!res.ok || !data.success) {
         throw new Error(data.message || "Order could not be placed.");
       }

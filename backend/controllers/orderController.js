@@ -1,5 +1,5 @@
 import orderModel from "../models/orderModel.js"
-import { sendOrderConfirmation } from "../services/emailService.js";
+import { sendOrderConfirmation, sendNewSubmissionNotification } from "../services/emailService.js";
 import crypto from "crypto"
 
 // placing order for frontend
@@ -18,7 +18,7 @@ const placeOrder = async (req,res) =>{
             assay,
             gene,
             variant,
-            status: "Order received",
+            status: "Submission received",
             comments: personal.comments || "",
             customer: {
                 fullName: personal.fullName,
@@ -33,11 +33,21 @@ const placeOrder = async (req,res) =>{
 
         await newOrder.save();
 
+        // Confirmation email to the person who submitted the variant
         await sendOrderConfirmation(
             personal.email,
             personal.fullName,
             trackingId
         );
+
+        // Notification email to the Variant to Treatment team
+        await sendNewSubmissionNotification({
+            trackingId,
+            assay,
+            gene,
+            variant,
+            personal,
+        });
 
         return res.status(201).json({
             success: true,
